@@ -19,7 +19,7 @@ router.post("/upload", auth, upload.single("file"), async (req, res) => {
 
     // Upload to Cloudinary
     const cloudRes = await cloudinary.uploader.upload(req.file.path, {
-      resource_type: "auto"
+       resource_type: "raw"
     });
 
     const uuid = uuidv4();
